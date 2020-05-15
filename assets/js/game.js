@@ -15,7 +15,7 @@ var enemyAttack = 12;
 
 var fight = function(enemyName) {
     // alert users that they are starting a round
-    while(enemyHealth >0) {
+    while(enemyHealth > 0 && playerHealth > 0) {
         var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
         console.log(promptFight);
     
@@ -32,6 +32,7 @@ var fight = function(enemyName) {
         // check enemy's health
         if (enemyHealth <= 0) {
             window.alert(enemyName + " has died!");
+            break;
         }
     
         else {
