@@ -5,7 +5,7 @@ var fight = function(enemy) {
       // ask user if they'd liked to fight or run
       var promptFight = window.prompt('Would you like FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
       if (promptFight === "fight" || promptFight === "FIGHT") {
-        console.log("Is this working?")
+        console.log("Fight");
       }
   
       // if user picks "skip" confirm and then stop the loop
@@ -18,7 +18,7 @@ var fight = function(enemy) {
           window.alert(playerInfo.name + ' has decided to skip this fight. Goodbye!');
           // subtract money from playerInfo.money for skipping
           playerInfo.money = Math.max(0, playerInfo.money - 10);
-          console.log("playerInfo.money", playerInfo.money)
+          console.log("playerInfo.money", playerInfo.money);
           break;
         }
       }
@@ -147,8 +147,20 @@ var fight = function(enemy) {
     return value;
   };
 
+  // function to set name
+var getPlayerName = function() {
+  var name = "";
+
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+
+  console.log("Your robot's name is " + name);
+  return name;
+};
+
   var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
