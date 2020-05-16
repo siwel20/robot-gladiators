@@ -13,7 +13,7 @@ var fight = function(enemyName) {
       // ask user if they'd liked to fight or run
       var promptFight = window.prompt('Would you like FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
       if (promptFight === "fight" || promptFight === "FIGHT") {
-        
+        console.log("Is this working?")
       }
   
       // if user picks "skip" confirm and then stop the loop
