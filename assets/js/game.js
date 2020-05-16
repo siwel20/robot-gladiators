@@ -12,9 +12,12 @@ var fight = function(enemyName) {
     while (playerHealth > 0 && enemyHealth > 0) {
       // ask user if they'd liked to fight or run
       var promptFight = window.prompt('Would you like FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
+      if (promptFight === "fight" || promptFight === "FIGHT") {
+        
+      }
   
       // if user picks "skip" confirm and then stop the loop
-      if (promptFight === "skip" || promptFight === "SKIP") {
+      else if (promptFight === "skip" || promptFight === "SKIP") {
         // confirm user wants to skip
         var confirmSkip = window.confirm("Are you sure you'd like to quit?");
   
@@ -26,6 +29,10 @@ var fight = function(enemyName) {
           console.log("playerMoney", playerMoney)
           break;
         }
+      }
+      else {
+        window.alert("You need to pick a valid option. Try again!");
+        fight();
       }
   
       // remove enemy's health by subtracting the amount set in the playerAttack variable
